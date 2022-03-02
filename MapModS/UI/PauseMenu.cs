@@ -104,7 +104,7 @@ namespace MapModS.UI
                 s => PoolsPanelClicked(),
                 buttonRect,
                 GUIController.Instance.TrajanBold,
-                "Customize\nPins",
+                "自定义\n图针",
                 fontSize: 10
             );
 
@@ -143,7 +143,7 @@ namespace MapModS.UI
                 BenchClicked,
                 buttonRect,
                 GUIController.Instance.TrajanBold,
-                "Benches",
+                "椅子",
                 fontSize: 10
             );
 
@@ -258,7 +258,7 @@ namespace MapModS.UI
                 );
             _mapControlPanel.GetButton("Enable").UpdateText
                 (
-                    MapModS.LS.ModEnabled ? ("Mod\nEnabled") : ("Mod\nDisabled")
+                    MapModS.LS.ModEnabled ? ("Mod\n开") : ("Mod\n关")
                 );
         }
 
@@ -280,7 +280,7 @@ namespace MapModS.UI
                 );
             _mapControlPanel.GetButton("Spoilers").UpdateText
                 (
-                    MapModS.LS.SpoilerOn ? ("Spoilers:\non") : ("Spoilers:\noff")
+                    MapModS.LS.SpoilerOn ? ("剧透:\n开") : ("剧透:\n关")
                 );
         }
 
@@ -303,18 +303,18 @@ namespace MapModS.UI
             if (MapModS.LS.randomizedOn)
             {
                 _mapControlPanel.GetButton("Randomized").SetTextColor(Color.green);
-                randomizedText += "Randomized:\non";
+                randomizedText += "随机:\n开";
             }
             else
             {
                 _mapControlPanel.GetButton("Randomized").SetTextColor(Color.white);
-                randomizedText += "Randomized:\noff";
+                randomizedText += "随机:\n关";
             }
 
             if (WorldMap.CustomPins.IsRandomizedCustom())
             {
                 _mapControlPanel.GetButton("Randomized").SetTextColor(Color.yellow);
-                randomizedText += " (custom)";
+                randomizedText += "(自定义)";
             }
 
             _mapControlPanel.GetButton("Randomized").UpdateText(randomizedText);
@@ -339,18 +339,18 @@ namespace MapModS.UI
             if (MapModS.LS.othersOn)
             {
                 _mapControlPanel.GetButton("Others").SetTextColor(Color.green);
-                othersText += "Others:\non";
+                othersText += "其他:\n开";
             }
             else
             {
                 _mapControlPanel.GetButton("Others").SetTextColor(Color.white);
-                othersText += "Others:\noff";
+                othersText += "其他:\n关";
             }
 
             if (WorldMap.CustomPins.IsOthersCustom())
             {
                 _mapControlPanel.GetButton("Others").SetTextColor(Color.yellow);
-                othersText += " (custom)";
+                othersText += "(自定义)";
             }
 
             _mapControlPanel.GetButton("Others").UpdateText(othersText);
@@ -370,19 +370,19 @@ namespace MapModS.UI
             switch (MapModS.GS.pinStyle)
             {
                 case PinStyle.Normal:
-                    _mapControlPanel.GetButton("Style").UpdateText("Pin Style:\nnormal");
+                    _mapControlPanel.GetButton("Style").UpdateText("图针风格:\n普通");
                     break;
 
                 case PinStyle.Q_Marks_1:
-                    _mapControlPanel.GetButton("Style").UpdateText("Pin Style:\nq marks 1");
+                    _mapControlPanel.GetButton("Style").UpdateText("图针风格:\n问号类型:1");
                     break;
 
                 case PinStyle.Q_Marks_2:
-                    _mapControlPanel.GetButton("Style").UpdateText("Pin Style:\nq marks 2");
+                    _mapControlPanel.GetButton("Style").UpdateText("图针风格:\n问号类型:2");
                     break;
 
                 case PinStyle.Q_Marks_3:
-                    _mapControlPanel.GetButton("Style").UpdateText("Pin Style:\nq marks 3");
+                    _mapControlPanel.GetButton("Style").UpdateText("图针风格:\n问号类型:3");
                     break;
             }
         }
@@ -409,16 +409,16 @@ namespace MapModS.UI
         {
             switch (MapModS.GS.pinSize)
             {
-                case PinSize.Small:
-                    _mapControlPanel.GetButton("Size").UpdateText("Pin Size:\nsmall");
+                 case PinSize.Small:
+                    _mapControlPanel.GetButton("Size").UpdateText("图针尺寸:\n小");
                     break;
 
                 case PinSize.Medium:
-                    _mapControlPanel.GetButton("Size").UpdateText("Pin Size:\nmedium");
+                    _mapControlPanel.GetButton("Size").UpdateText("图针尺寸:\n中");
                     break;
 
                 case PinSize.Large:
-                    _mapControlPanel.GetButton("Size").UpdateText("Pin Size:\nlarge");
+                    _mapControlPanel.GetButton("Size").UpdateText("图针尺寸:\n大");
                     break;
             }
         }
@@ -447,27 +447,27 @@ namespace MapModS.UI
             {
                 case MapMode.FullMap:
                     _mapControlPanel.GetButton("Mode").SetTextColor(Color.green);
-                    _mapControlPanel.GetButton("Mode").UpdateText("Mode:\nFull Map");
+                    _mapControlPanel.GetButton("Mode").UpdateText("模式:\n所有地图");
                     break;
 
                 case MapMode.AllPins:
                     _mapControlPanel.GetButton("Mode").SetTextColor(Color.white);
-                    _mapControlPanel.GetButton("Mode").UpdateText("Mode:\nAll Pins");
+                    _mapControlPanel.GetButton("Mode").UpdateText("模式:\n所有图针");
                     break;
 
                 case MapMode.PinsOverMap:
                     _mapControlPanel.GetButton("Mode").SetTextColor(Color.white);
-                    _mapControlPanel.GetButton("Mode").UpdateText("Mode:\nPins Over Map");
+                    _mapControlPanel.GetButton("Mode").UpdateText("模式:\n当前地图");
                     break;
 
                 case MapMode.TransitionRando:
                     _mapControlPanel.GetButton("Mode").SetTextColor(Color.cyan);
-                    _mapControlPanel.GetButton("Mode").UpdateText("Mode:\nTransition");
+                    _mapControlPanel.GetButton("Mode").UpdateText("模式:\n连接类型:1");
                     break;
 
                 case MapMode.TransitionRandoAlt:
                     _mapControlPanel.GetButton("Mode").SetTextColor(Color.cyan);
-                    _mapControlPanel.GetButton("Mode").UpdateText("Mode:\nTransition 2");
+                    _mapControlPanel.GetButton("Mode").UpdateText("模式:\n连接类型:2");
                     break;
             }
         }
@@ -505,7 +505,7 @@ namespace MapModS.UI
             {
                 _mapControlPanel.GetPanel("PoolsPanel").GetButton(pool.ToString()).UpdateText
                     (
-                        "Geo Rocks:\n"
+                        "钱堆:\n"
                         + MapModS.LS.GeoRockCounter + " / " + "207"
                     );
             }
@@ -562,11 +562,11 @@ namespace MapModS.UI
             switch (MapModS.LS.groupBy)
             {
                 case GroupBy.Location:
-                    _mapControlPanel.GetPanel("PoolsPanel").GetButton("GroupBy").UpdateText("Group by:\nLocation");
+                    _mapControlPanel.GetPanel("PoolsPanel").GetButton("GroupBy").UpdateText("分组方式:\n随机点");
                     break;
 
                 case GroupBy.Item:
-                    _mapControlPanel.GetPanel("PoolsPanel").GetButton("GroupBy").UpdateText("Group by:\nItem");
+                    _mapControlPanel.GetPanel("PoolsPanel").GetButton("GroupBy").UpdateText("分组方式:\n物品");
                     break;
             }
         }
@@ -582,12 +582,12 @@ namespace MapModS.UI
         {
             if (MapModS.GS.persistentOn)
             {
-                _mapControlPanel.GetPanel("PoolsPanel").GetButton("Persistent").UpdateText("Persistent\nitems: On");
+                _mapControlPanel.GetPanel("PoolsPanel").GetButton("Persistent").UpdateText("永存物品:\n开");
                 _mapControlPanel.GetPanel("PoolsPanel").GetButton("Persistent").SetTextColor(Color.green);
             }
             else
             {
-                _mapControlPanel.GetPanel("PoolsPanel").GetButton("Persistent").UpdateText("Persistent\nitems: Off");
+                _mapControlPanel.GetPanel("PoolsPanel").GetButton("Persistent").UpdateText("永存物品:\n关");
                 _mapControlPanel.GetPanel("PoolsPanel").GetButton("Persistent").SetTextColor(Color.white);
             }
         }

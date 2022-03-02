@@ -155,12 +155,12 @@ namespace MapModS.UI
             if (MapModS.LS.lookupOn)
             {
                 _instructionPanel.GetText("Control").SetTextColor(Color.green);
-                controlText += "Toggle lookup (Ctrl-L): On";
+                controlText += "开关详细信息面板 (Ctrl-L): 开";
             }
             else
             {
                 _instructionPanel.GetText("Control").SetTextColor(Color.white);
-                controlText += "Toggle lookup (Ctrl-L): Off";
+                controlText += "开关详细信息面板 (Ctrl-L): 关";
             }
 
             _instructionPanel.GetText("Control").UpdateText(controlText);
@@ -174,30 +174,30 @@ namespace MapModS.UI
 
             if (pd != null)
             {
-                instructionsText += $"\n\nRoom: {pd.sceneName}";
+                instructionsText += $"\n\n房间: {pd.sceneName}";
 
-                instructionsText += $"\n\nStatus:";
+                instructionsText += $"\n\n状态:";
 
                 instructionsText += pd.pinLocationState switch
                 {
-                    PinLocationState.UncheckedUnreachable => " Randomized, unchecked, unreachable",
-                    PinLocationState.UncheckedReachable => " Randomized, unchecked, reachable",
-                    PinLocationState.NonRandomizedUnchecked => " Not randomized, either unchecked or persistent",
-                    PinLocationState.OutOfLogicReachable => " Randomized, unchecked, reachable through sequence break",
-                    PinLocationState.Previewed => " Randomized, previewed",
-                    PinLocationState.Cleared => " Cleared",
-                    PinLocationState.ClearedPersistent => " Randomized, cleared, persistent",
+                    PinLocationState.UncheckedUnreachable => " 被随机, 未检查, 无法到达",
+                    PinLocationState.UncheckedReachable => " 被随机, 未检查, 可以到达",
+                    PinLocationState.NonRandomizedUnchecked => " 未随机, 未检查或永存",
+                    PinLocationState.OutOfLogicReachable => " 被随机, 未检查, 因为之前不在逻辑的操作而可以到达",
+                    PinLocationState.Previewed => " 被随机, 已预览",
+                    PinLocationState.Cleared => " 已清空",
+                    PinLocationState.ClearedPersistent => " 被随机, 已清空, 永存",
                     _ => ""
                 };
 
                 if (DataLoader.IsInLogicLookup(selectedLocation))
                 {
-                    instructionsText += $"\n\nLogic: {DataLoader.GetRawLogic(selectedLocation)}";
+                    instructionsText += $"\n\n逻辑: {DataLoader.GetRawLogic(selectedLocation)}";
                 }
 
                 if (RandomizerMod.RandomizerMod.RS.TrackerData.previewedLocations.Contains(pd.name))
                 {
-                    instructionsText += $"\n\nPreviewed item(s):";
+                    instructionsText += $"\n\n已预览物品:";
 
                     string[] previewText = DataLoader.GetPreviewText(pd.abstractPlacementName);
 
@@ -218,7 +218,7 @@ namespace MapModS.UI
                         || (RandomizerMod.RandomizerMod.RS.TrackerData.previewedLocations.Contains(pd.name)
                             && !pd.canPreviewItem)))
                 {
-                    instructionsText += $"\n\nSpoiler item(s):";
+                    instructionsText += $"\n\n剧透物品:";
 
                     foreach (ItemDef item in pd.randoItems)
                     {

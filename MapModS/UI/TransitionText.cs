@@ -347,15 +347,15 @@ namespace MapModS.UI
 
         public static void SetInstructionsText()
         {
-            string instructionsText = $"Selected room: {selectedScene}.";
+            string instructionsText = $"选中的房间: {selectedScene}.";
 
             if (selectedScene == StringUtils.CurrentNormalScene())
             {
-                instructionsText += " You are here.";
+                instructionsText += " 你在这里。";
             }
             else
             {
-                instructionsText += $" Press [Menu Select] to find new route or switch starting / final transitions.";
+                instructionsText += $" 按[Menu Select]键寻找新的路线或者切换连接的起终点。";
             }
 
             _instructionPanel.GetText("Instructions").UpdateText(instructionsText);
@@ -363,7 +363,7 @@ namespace MapModS.UI
 
         public static void SetControlText()
         {
-            string controlText = "Current route: ";
+            string controlText = "目前路线: ";
 
             if (lastStartScene != ""
                 && lastFinalScene != ""
@@ -372,44 +372,44 @@ namespace MapModS.UI
                 && selectedRoute.Any())
             {
                 controlText += $"{lastStartTransition} ->...-> {lastFinalTransition}      ";
-                controlText += $"Transitions: {selectedRoute.Count()}";
+                controlText += $"连接: {selectedRoute.Count()}";
             }
             else
             {
-                controlText += "None";
+                controlText += "无";
             }
 
             if (Dependencies.HasDependency("Benchwarp"))
             {
                 if (MapModS.GS.allowBenchWarpSearch)
                 {
-                    controlText += "\nInclude benchwarp (Ctrl-B): On";
+                    controlText += "\n包括回椅子 (Ctrl-B): 开";
                 }
                 else
                 {
-                    controlText += "\nInclude benchwarp (Ctrl-B): Off";
+                    controlText += "\n包括回椅子 (Ctrl-B): 关";
                 }
             }
 
             if (MapModS.GS.uncheckedPanelActive)
             {
-                controlText += "\nShow unchecked/visited (Ctrl-U): On";
+                controlText += "\n显示已/未检查的连接 (Ctrl-U): 开";
             }
             else
             {
-                controlText += "\nShow unchecked/visited (Ctrl-U): Off";
+                controlText += "\n显示已/未检查的连接 (Ctrl-U): 关";
             }
 
             switch (MapModS.GS.routeTextInGame)
             {
                 case RouteTextInGame.Hide:
-                    controlText += "\nShow route in-game (Ctrl-R): Off";
+                    controlText += "\n游戏内显示路线 (Ctrl-R): 关";
                     break;
                 case RouteTextInGame.Show:
-                    controlText += "\nShow route in-game (Ctrl-R): Full";
+                    controlText += "\n游戏内显示路线 (Ctrl-R): 全部";
                     break;
                 case RouteTextInGame.ShowNextTransitionOnly:
-                    controlText += "\nShow route in-game (Ctrl-R): Next Transition Only";
+                    controlText += "\n游戏内显示路线 (Ctrl-R): 仅下个连接";
                     break;
             }
 
@@ -493,7 +493,7 @@ namespace MapModS.UI
 
             if (uncheckedTransitions.Any())
             {
-                uncheckedTransitionsText += "Unchecked:";
+                uncheckedTransitionsText += "未检查:";
 
                 foreach (string transition in uncheckedTransitions)
                 {
@@ -507,7 +507,7 @@ namespace MapModS.UI
 
             if (visitedTransitions.Any())
             {
-                uncheckedTransitionsText += "Visited:";
+                uncheckedTransitionsText += "已检查:";
 
                 foreach (Tuple<string, string> transition in visitedTransitions)
                 {

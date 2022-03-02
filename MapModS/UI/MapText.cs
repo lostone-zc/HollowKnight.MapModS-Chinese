@@ -80,7 +80,7 @@ namespace MapModS.UI
         {
             _mapDisplayPanel.GetText("Spoilers").UpdateText
                 (
-                    MapModS.LS.SpoilerOn ? "Spoilers (ctrl-1): on" : "Spoilers (ctrl-1): off"
+                    MapModS.LS.SpoilerOn ? "剧透 (ctrl-1): 开" : "剧透 (ctrl-1): 关"
                 );
             _mapDisplayPanel.GetText("Spoilers").SetTextColor
                 (
@@ -97,18 +97,18 @@ namespace MapModS.UI
             if (MapModS.LS.randomizedOn)
             {
                 _mapDisplayPanel.GetText("Randomized").SetTextColor(Color.green);
-                randomizedText += "Randomized (ctrl-2): on";
+                randomizedText += "随机 (ctrl-2): 开";
             }
             else
             {
                 _mapDisplayPanel.GetText("Randomized").SetTextColor(Color.white);
-                randomizedText += "Randomized (ctrl-2): off";
+                randomizedText += "随机 (ctrl-2): 关";
             }
 
             if (WorldMap.CustomPins.IsRandomizedCustom())
             {
                 _mapDisplayPanel.GetText("Randomized").SetTextColor(Color.yellow);
-                randomizedText += " (custom)";
+                randomizedText += "(自定义)";
             }
 
             _mapDisplayPanel.GetText("Randomized").UpdateText(randomizedText);
@@ -123,18 +123,18 @@ namespace MapModS.UI
             if (MapModS.LS.othersOn)
             {
                 _mapDisplayPanel.GetText("Others").SetTextColor(Color.green);
-                othersText += "Others (ctrl-3): on";
+                othersText += "其他 (ctrl-3): 开";
             }
             else
             {
                 _mapDisplayPanel.GetText("Others").SetTextColor(Color.white);
-                othersText += "Others (ctrl-3): off";
+                othersText += "其他 (ctrl-3): 关";
             }
 
             if (WorldMap.CustomPins.IsOthersCustom())
             {
                 _mapDisplayPanel.GetText("Others").SetTextColor(Color.yellow);
-                othersText += " (custom)";
+                othersText += "(自定义)";
             }
 
             _mapDisplayPanel.GetText("Others").UpdateText(othersText);
@@ -145,19 +145,19 @@ namespace MapModS.UI
             switch (MapModS.GS.pinStyle)
             {
                 case PinStyle.Normal:
-                    _mapDisplayPanel.GetText("Style").UpdateText("Style (ctrl-4): normal");
+                    _mapDisplayPanel.GetText("Style").UpdateText("图针风格 (ctrl-4): 普通");
                     break;
 
                 case PinStyle.Q_Marks_1:
-                    _mapDisplayPanel.GetText("Style").UpdateText("Style (ctrl-4): q marks 1");
+                    _mapDisplayPanel.GetText("Style").UpdateText("图针风格 (ctrl-4): 问号类型:1");
                     break;
 
                 case PinStyle.Q_Marks_2:
-                    _mapDisplayPanel.GetText("Style").UpdateText("Style (ctrl-4): q marks 2");
+                    _mapDisplayPanel.GetText("Style").UpdateText("图针风格 (ctrl-4): 问号类型:2");
                     break;
 
                 case PinStyle.Q_Marks_3:
-                    _mapDisplayPanel.GetText("Style").UpdateText("Style (ctrl-4): q marks 3");
+                    _mapDisplayPanel.GetText("Style").UpdateText("图针风格 (ctrl-4): 问号类型:3");
                     break;
             }
         }
@@ -167,15 +167,15 @@ namespace MapModS.UI
             switch (MapModS.GS.pinSize)
             {
                 case PinSize.Small:
-                    _mapDisplayPanel.GetText("Size").UpdateText("Size (ctrl-5): small");
+                    _mapDisplayPanel.GetText("Size").UpdateText("图针尺寸 (ctrl-5): 小");
                     break;
 
                 case PinSize.Medium:
-                    _mapDisplayPanel.GetText("Size").UpdateText("Size (ctrl-5): medium");
+                    _mapDisplayPanel.GetText("Size").UpdateText("图针尺寸 (ctrl-5): 中");
                     break;
 
                 case PinSize.Large:
-                    _mapDisplayPanel.GetText("Size").UpdateText("Size (ctrl-5): large");
+                    _mapDisplayPanel.GetText("Size").UpdateText("图针尺寸 (ctrl-5): 大");
                     break;
             }
         }
