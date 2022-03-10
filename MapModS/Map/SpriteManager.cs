@@ -37,32 +37,32 @@ namespace MapModS.Map
                 case PinStyle.Normal:
                     spriteName = pool switch
                     {
-                        PoolGroup.Dreamers => "pinDreamer",
-                        PoolGroup.Skills => "pinSkill",
-                        PoolGroup.Charms => "pinCharm",
-                        PoolGroup.Keys => "pinKey",
-                        PoolGroup.MaskShards => "pinMask",
-                        PoolGroup.VesselFragments => "pinVessel",
-                        PoolGroup.CharmNotches => "pinNotch",
-                        PoolGroup.PaleOre => "pinOre",
-                        PoolGroup.GeoChests => "pinGeo",
-                        PoolGroup.RancidEggs => "pinEgg",
-                        PoolGroup.Relics => "pinRelic",
-                        PoolGroup.WhisperingRoots => "pinRoot",
-                        PoolGroup.BossEssence => "pinEssenceBoss",
-                        PoolGroup.Grubs => "pinGrub",
-                        PoolGroup.Mimics => "pinGrub",
-                        PoolGroup.Maps => "pinMap",
-                        PoolGroup.Stags => "pinStag",
-                        PoolGroup.LifebloodCocoons => "pinCocoon",
-                        PoolGroup.GrimmkinFlames => "pinFlame",
-                        PoolGroup.JournalEntries => "pinLore",
+                        PoolGroup.守梦者 => "pinDreamer",
+                        PoolGroup.技能 => "pinSkill",
+                        PoolGroup.护符 => "pinCharm",
+                        PoolGroup.钥匙 => "pinKey",
+                        PoolGroup.面具碎片 => "pinMask",
+                        PoolGroup.容器碎片 => "pinVessel",
+                        PoolGroup.护符槽 => "pinNotch",
+                        PoolGroup.苍白矿石 => "pinOre",
+                        PoolGroup.钱箱 => "pinGeo",
+                        PoolGroup.腐臭蛋 => "pinEgg",
+                        PoolGroup.古董 => "pinRelic",
+                        PoolGroup.低语之根 => "pinRoot",
+                        PoolGroup.Boss精华 => "pinEssenceBoss",
+                        PoolGroup.幼虫 => "pinGrub",
+                        PoolGroup.假虫子 => "pinGrub",
+                        PoolGroup.地图 => "pinMap",
+                        PoolGroup.鹿角站 => "pinStag",
+                        PoolGroup.生命血茧 => "pinCocoon",
+                        PoolGroup.格林火焰 => "pinFlame",
+                        PoolGroup.猎人日志 => "pinLore",
                         PoolGroup.GeoRocks => "pinRock",
-                        PoolGroup.BossGeo => "pinGeo",
-                        PoolGroup.SoulTotems => "pinTotem",
-                        PoolGroup.LoreTablets => "pinLore",
-                        PoolGroup.Shop => "pinShop",
-                        PoolGroup.Levers => "pinLever",
+                        PoolGroup.Boss吉欧 => "pinGeo",
+                        PoolGroup.灵魂图腾 => "pinTotem",
+                        PoolGroup.碑文 => "pinLore",
+                        PoolGroup.商店 => "pinShop",
+                        PoolGroup.拉干 => "pinLever",
                         _ => "pinUnknown",
                     };
                     break;
@@ -70,7 +70,7 @@ namespace MapModS.Map
                 case PinStyle.Q_Marks_1:
                     spriteName = pool switch
                     {
-                        PoolGroup.Shop => "pinShop",
+                        PoolGroup.商店 => "pinShop",
                         _ => "pinUnknown",
                     };
                     break;
@@ -78,12 +78,12 @@ namespace MapModS.Map
                 case PinStyle.Q_Marks_2:
                     spriteName = pool switch
                     {
-                        PoolGroup.Grubs => "pinUnknown_GrubInv",
-                        PoolGroup.Mimics => "pinUnknown_GrubInv",
-                        PoolGroup.LifebloodCocoons => "pinUnknown_LifebloodInv",
+                        PoolGroup.幼虫 => "pinUnknown_GrubInv",
+                        PoolGroup.假虫子 => "pinUnknown_GrubInv",
+                        PoolGroup.生命血茧 => "pinUnknown_LifebloodInv",
                         PoolGroup.GeoRocks => "pinUnknown_GeoRockInv",
-                        PoolGroup.SoulTotems => "pinUnknown_TotemInv",
-                        PoolGroup.Shop => "pinShop",
+                        PoolGroup.灵魂图腾 => "pinUnknown_TotemInv",
+                        PoolGroup.商店 => "pinShop",
                         _ => "pinUnknown",
                     };
                     break;
@@ -91,12 +91,12 @@ namespace MapModS.Map
                 case PinStyle.Q_Marks_3:
                     spriteName = pool switch
                     {
-                        PoolGroup.Grubs => "pinUnknown_Grub",
-                        PoolGroup.Mimics => "pinUnknown_Grub",
-                        PoolGroup.LifebloodCocoons => "pinUnknown_Lifeblood",
+                        PoolGroup.幼虫 => "pinUnknown_Grub",
+                        PoolGroup.假虫子 => "pinUnknown_Grub",
+                        PoolGroup.生命血茧 => "pinUnknown_Lifeblood",
                         PoolGroup.GeoRocks => "pinUnknown_GeoRock",
-                        PoolGroup.SoulTotems => "pinUnknown_Totem",
-                        PoolGroup.Shop => "pinShop",
+                        PoolGroup.灵魂图腾 => "pinUnknown_Totem",
+                        PoolGroup.商店 => "pinShop",
                         _ => "pinUnknown",
                     };
                     break;

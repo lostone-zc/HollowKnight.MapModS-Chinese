@@ -392,7 +392,7 @@ namespace MapModS.Map
         {
             if (!randomizedGroups.Any()) return false;
 
-            return (Enum.GetValues(typeof(PoolGroup)).Cast<PoolGroup>().Except(randomizedGroups).Where(g => g != PoolGroup.Unknown && g != PoolGroup.Shop)
+            return (Enum.GetValues(typeof(PoolGroup)).Cast<PoolGroup>().Except(randomizedGroups).Where(g => g != PoolGroup.Unknown && g != PoolGroup.商店)
                 .Any(g => MapModS.LS.GetPoolGroupState(g) == PoolGroupState.On && !MapModS.LS.othersOn
                      || MapModS.LS.GetPoolGroupState(g) == PoolGroupState.Off && MapModS.LS.othersOn));
         }
