@@ -79,39 +79,39 @@ namespace MapModS.Data
         // Uses RandomizerData to get the PoolGroup from an item name
         public static PoolGroup GetPoolGroup(string cleanItemName)
         {
-            if (shopLocations.Contains(cleanItemName)) return PoolGroup.商店;
+            if (shopLocations.Contains(cleanItemName)) return PoolGroup.Shop;
 
             switch (cleanItemName)
             {
                 case "Dreamer":
-                    return PoolGroup.守梦者;
+                    return PoolGroup.Dreamers;
 
                 case "Split_Mothwing_Cloak":
                 case "Split_Crystal_Heart":
                 case "Downslash":
-                    return PoolGroup.技能;
+                    return PoolGroup.Skills;
 
                 case "Double_Mask_Shard":
                 case "Full_Mask":
-                    return PoolGroup.面具碎片;
+                    return PoolGroup.MaskShards;
 
                 case "Double_Vessel_Fragment":
                 case "Full_Soul_Vessel":
-                    return PoolGroup.容器碎片;
+                    return PoolGroup.VesselFragments;
 
                 case "Grimmchild1":
                 case "Grimmchild2":
-                    return PoolGroup.护符;
+                    return PoolGroup.Charms;
 
                 case "Grub":
-                    return PoolGroup.幼虫;
+                    return PoolGroup.Grubs;
 
                 case "One_Geo":
-                    return PoolGroup.钱箱;
+                    return PoolGroup.GeoChests;
 
                 case "Mr_Mushroom_Level_Up":
                 case "Mr_Mushroom":
-                    return PoolGroup.碑文;
+                    return PoolGroup.LoreTablets;
 
                 case "DirectionalDash":
                 case "DownwardFireball":
@@ -121,11 +121,11 @@ namespace MapModS.Data
                 case "TripleJump":
                 case "VerticalSuperdash":
                 case "WallClimb":
-                    return PoolGroup.技能;
+                    return PoolGroup.Skills;
 
                 case "Lever":
                 case "Switch":
-                    return PoolGroup.拉干;
+                    return PoolGroup.Levers;
 
                 default:
                     break;
@@ -144,7 +144,7 @@ namespace MapModS.Data
                 }
             }
 
-            if (cleanItemName.EndsWith("_Geo")) return PoolGroup.钱箱;
+            if (cleanItemName.EndsWith("_Geo")) return PoolGroup.GeoChests;
 
             MapModS.Instance.LogWarn($"PoolGroup not found for an item: " + cleanItemName);
 
@@ -252,9 +252,9 @@ namespace MapModS.Data
         {
             return (pd.pdBool != null && PlayerData.instance.GetBool(pd.pdBool))
                         || (pd.pdInt != null && PlayerData.instance.GetInt(pd.pdInt) >= pd.pdIntValue)
-                        || (pd.locationPoolGroup == PoolGroup.低语之根 && PlayerData.instance.scenesEncounteredDreamPlantC.Contains(pd.sceneName))
-                        || (pd.locationPoolGroup == PoolGroup.幼虫 && PlayerData.instance.scenesGrubRescued.Contains(pd.sceneName))
-                        || (pd.locationPoolGroup == PoolGroup.格林火焰 && PlayerData.instance.scenesFlameCollected.Contains(pd.sceneName))
+                        || (pd.locationPoolGroup == PoolGroup.WhisperingRoots && PlayerData.instance.scenesEncounteredDreamPlantC.Contains(pd.sceneName))
+                        || (pd.locationPoolGroup == PoolGroup.Grubs && PlayerData.instance.scenesGrubRescued.Contains(pd.sceneName))
+                        || (pd.locationPoolGroup == PoolGroup.GrimmkinFlames && PlayerData.instance.scenesFlameCollected.Contains(pd.sceneName))
                         || MapModS.LS.ObtainedVanillaItems.ContainsKey(pd.objectName + pd.sceneName);
         }
 
